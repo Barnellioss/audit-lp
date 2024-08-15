@@ -10,7 +10,7 @@ const popupStore = usePopupStore();
 const popupHandler = (flag: boolean) => {
     popupStore.set(flag);
 }
-
+//
 </script>
 
 <template>
