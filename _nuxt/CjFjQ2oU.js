@@ -1,0 +1,1 @@
+import{_ as e,c as s,o as t,a as o}from"./CMuDVBWv.js";const c={},n={class:"p-10 bg--fone"},_=o("h1",{class:"font-bold text2xl mb-10"},"CRM System",-1),a=[_];function r(d,f){return t(),s("div",n,a)}const l=e(c,[["render",r]]);export{l as default};
