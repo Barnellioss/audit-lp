@@ -4,7 +4,7 @@
     <div v-for="(item, index) in roadmap" :key="index"
       class="roadmap-item text-black flex flex-row mb-10 max-w-full lg:max-w-half"
       :style="{ alignSelf: index % 2 === 0 ? 'flex-start' : 'flex-end' }"
-      :class="index != roadmap.length - 1 && index % 2 === 0 ? 'roadmap-item-left' : 'roadmap-item-right'">
+      :class="index != (roadmap.length - 1) && (index % 2 === 0 ? 'roadmap-item-left' : 'roadmap-item-right')">
       <NuxtImg :src="item.step" alt="step" width="50px" style="min-width: 50px;" />
       <div class="ml-10">
         <h4 class="font-black mb-2" style="font-size: 1.5rem; line-height: 30px;">
@@ -18,11 +18,13 @@
 
 <script lang="ts" setup>
 import { defineProps } from 'vue';
-import type { Iroadmap } from '~/data/roadmap';
+import { roadmap, type Iroadmap } from '~/data/roadmap';
 
 const props = defineProps<{
   roadmap: Iroadmap[];
 }>();
+
+console.log(roadmap.length)
 </script>
 
 <style scoped>
@@ -41,7 +43,7 @@ const props = defineProps<{
 }
 
 .roadmap-item-left::after {
-  left: 97%;
+  left: 100%;
   top: 100%;
   transform: translateY(-50%);
   background-image: url("arrow-right.svg");
